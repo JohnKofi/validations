@@ -1,19 +1,19 @@
 <?php
   /*
   *this accepts POST requests - it can be changed if neccesary
-  *all resonses are in json format so a javascript file can pick them up for AJAX processes
+  *all responses are in json format so a javascript file can pick them up for AJAX processes
   */
   if($_POST){
 
     if ($_POST['phone'] == "") {
-      echo json_encode(array("resonse" => "0", "message" => "Please enter phone number!"));
+      echo json_encode(array("response" => "0", "message" => "Please enter phone number!"));
       exit;
     }
 
     if (validate_phone( $_POST['phone']) == true ) {
-      echo json_encode(array("resonse" => "1", "message" => "Hurray phone number is valid!"));
+      echo json_encode(array("response" => "1", "message" => "Hurray phone number is valid!"));
     } else {
-      echo json_encode(array("resonse" => "1", "message" => "Ouch the phone number does not look like a valid one!"));
+      echo json_encode(array("response" => "1", "message" => "Ouch the phone number does not look like a valid one!"));
     }
 
 
